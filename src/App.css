@@ -4,6 +4,39 @@
   padding: 2rem;
   text-align: center;
 }
-.NewTask{
-  padding: 1em 6em;
+.TodoInput1{
+  margin-top: 3em;
+}
+.TodoInput2{
+  border: 0.5px solid rgb(198, 193, 193);
+  padding: 2em;
+}
+.NewTodo{
+  border: 0.5px solid rgb(198, 193, 193);
+  padding: 1em;
+  text-align: left;
+}
+.NewTodoDes{
+  border: 0.5px solid rgb(198, 193, 193);
+  padding: 1em;
+  text-align: left;
+  margin-top: 1em;
+}
+.AddNewTask{
+  margin-top: 1em;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+  padding: 2em 10em;
+  border-style: none;
+  font-size: large;
+}
+.ToDoList{
+  padding: 3em;
+}
+.buttonStack{
+  padding: 1em 3em;
+  justify-content: space-between;
+  display: flex;
+  
 }
