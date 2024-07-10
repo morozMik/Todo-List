@@ -1,0 +1,22 @@
+.TodoItem{
+  margin-top: 2em;
+  padding: 2em 1em;
+  border: 0.5px solid rgb(198, 193, 193);
+}
+.taskName{
+  font-weight: 600;
+  font-size: large;
+}
+.expandButton{
+  background-color: white;
+  border: none;
+  color: black;
+  align-items: center;
+  
+}
+.expandButton:hover:focus{
+  background-color: white;
+  border: none;
+  color: black;
+  align-items: center;
+}

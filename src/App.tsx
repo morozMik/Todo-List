@@ -1,14 +1,24 @@
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Button, Ciner, Stack } from "react-bootstrap"
+import { Button, Stack } from "react-bootstrap"
 import TodoInput from './components/TodoInput'
+import Todos from './components/Todos'
+import { useState } from 'react'
+
+export type Task = {
+  title: string,
+  description: string,
+  id: string
+}
 
 function App() {
 
 
+  const [tasks, setTasks] = useState<Task[]>()
+
   return (
     <>
-    <TodoInput/>
+    <TodoInput setTasks={setTasks}/>
     <div className='ToDoList'>
       <h1>ToDo List</h1>
       <div>
@@ -18,8 +28,8 @@ function App() {
           <Button className='w-100  ' size='lg'>Todo</Button> 
         </Stack>
       </div>
-      <div className='todos'>
-
+      <div>
+        <Todos/>
       </div>
     </div>
     </>
