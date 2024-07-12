@@ -7,17 +7,17 @@ import Form from 'react-bootstrap/Form';
 import './Todos.css'
 
 
+type TodosProps= {
+  tasks: Task[]
+}
 
 
-
-function Todos() {
+function Todos({tasks}:TodosProps) {
 
   const [open, setOpen] = useState(false);
 
-
-
-  
-  return (
+  const TodoElement = tasks.map(task => 
+  <>
     <div className='TodoItem'>
       <Row>   
         <Stack gap={3} direction='horizontal'>
@@ -27,8 +27,8 @@ function Todos() {
             aria-expanded={open} className='expandButton'>
             <MdExpandMore/>
           </Button>
-          <div className='taskName'>Name of the task</div>
-          <Form.Check  aria-label="option 1"className="p-2 ms-auto"/>
+          <div className='taskName'>{task.title}</div>
+          <Form.Check aria-label="option 1"className="p-2 ms-auto"/>
           <Button variant="outline-warning"><MdOutlineEdit/></Button>
           <Button variant="outline-danger"><FaRegTrashCan/></Button>
         </Stack>
@@ -36,13 +36,17 @@ function Todos() {
       <Row>
         <Collapse in={open}>
           <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
+            {task.description}
           </div>
         </Collapse>
       </Row>
     </div>
+  </>)
+
+
+  
+  return (
+    <div>{TodoElement}</div>
   )
 }
 export default Todos
